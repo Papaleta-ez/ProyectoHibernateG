@@ -8,9 +8,15 @@ import java.util.Map;
 
 public class JPAUtil {
     private static EntityManagerFactory entityManagerFactory;
+    private static String passwordConfigurada;
+
+    public static void configurarPassword(String password) {
+        passwordConfigurada = password;
+    }
+
     public static synchronized void iniciar() {
         if (entityManagerFactory == null) {
-            String password = System.getenv("DB_PASSWORD");
+            String password = passwordConfigurada != null ? passwordConfigurada : System.getenv("DB_PASSWORD");
             if (password == null || password.isBlank()) {
                 throw new RuntimeException("DB_PASSWORD environment variable is empty");
             }

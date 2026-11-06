@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.2">
              <persistence-unit name ="bibliotecaPU" transaction-type="RESOURCE_LOCAL">
-                 <provider>
-                     org.hibernate.jpa.HibernatePersistenceProvider
-                 </provider>
-                 <class>
-                     ni.edu.uam.proyectohibernateg3.model.Libro
-                 </class>
+                 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+                 <class>ni.edu.uam.proyectohibernateg3.model.Libro</class>
                  <properties>
                      <!--PosgreSQL -->
                      <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
